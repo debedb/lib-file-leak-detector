@@ -17,3 +17,5 @@ work
 # Claude Code
 .claude
 CLAUDE.md
+
+*.class
