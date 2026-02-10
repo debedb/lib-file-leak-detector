@@ -92,6 +92,8 @@ public class AgentMain {
                             .loadClass(t.substring(9))
                             .getDeclaredConstructor()
                             .newInstance());
+                } else if (t.equals("json")) {
+                    Listener.JSON = true;
                 } else if (t.equals("dumpatshutdown")) {
                     Runtime.getRuntime().addShutdownHook(new Thread("File handles dumping shutdown hook") {
                         @Override
@@ -245,6 +247,7 @@ public class AgentMain {
         System.err.println("  strong         - Don't let GC auto-close leaking file descriptors.");
         System.err.println(
                 "  listener=S     - Specify the fully qualified name of ActivityListener class to activate from beginning.");
+        System.err.println("  json           - Output dumps in single-line JSON format.");
         System.err.println("  dumpatshutdown - Dump open file handles at shutdown.");
         System.err.println("  dumpinterval=N - Dump open file handles every N seconds.");
         System.err.println("  excludes=FILE  - Ignore files opened directly/indirectly in specific methods.");

@@ -24,3 +24,11 @@ This compiles `LeakyApp.java` and builds the agent jar (via Maven) if needed.
 ```
 
 The app runs for 10 seconds. Watch stderr for periodic dumps of open file handles with stack traces showing where they were opened.
+
+### JSON mode
+
+```bash
+./run-json.sh
+```
+
+Same as above but uses the `json` agent option. Each dump is a single JSON line, suitable for log aggregation (e.g., CloudWatch, ELK). Stack traces appear as arrays of strings.
